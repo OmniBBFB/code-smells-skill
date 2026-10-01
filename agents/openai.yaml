@@ -1,0 +1,5 @@
+interface:
+  display_name: "代码坏味道审查"
+  short_description: "以代码和契约证据审查23种坏味道，排除合理设计并提出最小改善建议"
+policy:
+  allow_implicit_invocation: true

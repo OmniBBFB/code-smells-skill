@@ -1,0 +1,94 @@
+[
+  {
+    "case": "case-01",
+    "id": "s18-finding"
+  },
+  {
+    "case": "case-02",
+    "id": "s16-uncertain"
+  },
+  {
+    "case": "case-03",
+    "id": "s07-exclude"
+  },
+  {
+    "case": "case-04",
+    "id": "chain-positive"
+  },
+  {
+    "case": "case-05",
+    "id": "s15-uncertain"
+  },
+  {
+    "case": "case-06",
+    "id": "middle-negative"
+  },
+  {
+    "case": "case-07",
+    "id": "s15-finding"
+  },
+  {
+    "case": "case-08",
+    "id": "s04-exclude"
+  },
+  {
+    "case": "case-09",
+    "id": "s16-finding"
+  },
+  {
+    "case": "case-10",
+    "id": "s11-finding"
+  },
+  {
+    "case": "case-11",
+    "id": "s17-finding"
+  },
+  {
+    "case": "case-12",
+    "id": "s17-exclude"
+  },
+  {
+    "case": "case-13",
+    "id": "s13-exclude"
+  },
+  {
+    "case": "case-14",
+    "id": "envy-positive"
+  },
+  {
+    "case": "case-15",
+    "id": "chain-negative"
+  },
+  {
+    "case": "case-16",
+    "id": "s23-exclude"
+  },
+  {
+    "case": "case-17",
+    "id": "s16-exclude"
+  },
+  {
+    "case": "case-18",
+    "id": "middle-positive"
+  },
+  {
+    "case": "case-19",
+    "id": "s10-finding"
+  },
+  {
+    "case": "case-20",
+    "id": "s08-exclude"
+  },
+  {
+    "case": "case-21",
+    "id": "s12-finding"
+  },
+  {
+    "case": "case-22",
+    "id": "intimacy-uncertain"
+  },
+  {
+    "case": "case-23",
+    "id": "s09-uncertain"
+  }
+]

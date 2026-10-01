@@ -1,0 +1,74 @@
+[
+  {
+    "id": "envy-positive",
+    "target": "S19",
+    "expected": "finding",
+    "file": "cases/envy-positive/sample.py"
+  },
+  {
+    "id": "envy-negative",
+    "target": "S19",
+    "expected": "exclude",
+    "file": "cases/envy-negative/sample.py"
+  },
+  {
+    "id": "envy-uncertain",
+    "target": "S19",
+    "expected": "uncertain",
+    "file": "cases/envy-uncertain/sample.py"
+  },
+  {
+    "id": "intimacy-positive",
+    "target": "S20",
+    "expected": "finding",
+    "file": "cases/intimacy-positive/sample.py"
+  },
+  {
+    "id": "intimacy-negative",
+    "target": "S20",
+    "expected": "exclude",
+    "file": "cases/intimacy-negative/sample.py"
+  },
+  {
+    "id": "intimacy-uncertain",
+    "target": "S20",
+    "expected": "uncertain",
+    "file": "cases/intimacy-uncertain/sample.py"
+  },
+  {
+    "id": "chain-positive",
+    "target": "S21",
+    "expected": "finding",
+    "file": "cases/chain-positive/sample.py"
+  },
+  {
+    "id": "chain-negative",
+    "target": "S21",
+    "expected": "exclude",
+    "file": "cases/chain-negative/sample.py"
+  },
+  {
+    "id": "chain-uncertain",
+    "target": "S21",
+    "expected": "uncertain",
+    "file": "cases/chain-uncertain/sample.py"
+  },
+  {
+    "id": "middle-positive",
+    "target": "S22",
+    "expected": "finding",
+    "file": "cases/middle-positive/sample.py"
+  },
+  {
+    "id": "middle-negative",
+    "target": "S22",
+    "expected": "exclude",
+    "file": "cases/middle-negative/sample.py"
+  },
+  {
+    "id": "middle-uncertain",
+    "target": "S22",
+    "expected": "uncertain",
+    "file": "cases/middle-uncertain/sample.py"
+  }
+]

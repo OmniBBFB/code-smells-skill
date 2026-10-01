@@ -1,0 +1,146 @@
+[
+  {
+    "case": "case-01",
+    "findings": [
+      {
+        "category": "S19",
+        "location": "cases/case-01/sample.py:9-13",
+        "evidence": "Subscription 的第2行契约声明其拥有包括宽限期计费资格在内的权益规则；InvoiceRenderer 用 active、overdue_days、grace_days 重建资格判断。",
+        "impact": "计费资格规则调整时，展示器需要理解并同步修改 Subscription 的领域规则，规则与显示职责分离失败。",
+        "suggestion": "在 Subscription 提供计费资格查询，渲染器只将结果转换为文字。"
+      }
+    ],
+    "uncertain": [],
+    "exclusions": []
+  },
+  {
+    "case": "case-02",
+    "findings": [],
+    "uncertain": [],
+    "exclusions": [
+      {
+        "category": "S19",
+        "reason": "Account 明确是公开只读报表投影；导出仅映射三个字段为 CSV，未重建领域规则。"
+      }
+    ]
+  },
+  {
+    "case": "case-03",
+    "findings": [],
+    "uncertain": [
+      {
+        "category": "S19",
+        "missing": "缺少 product 定义、定价规则归属及 display_price 的调用边界；base_price 与 discount_rate 运算可能是产品领域规则或独立展示/定价策略，无法确认归属。"
+      }
+    ],
+    "exclusions": []
+  },
+  {
+    "case": "case-04",
+    "findings": [
+      {
+        "category": "S20",
+        "location": "cases/case-04/sample.py:14-15",
+        "evidence": "Wallet 第2行要求通过 debit 同时更新余额与流水；debit 第8-11行校验金额并追加流水；Payment 直接修改 _balance。",
+        "impact": "当前 pay 路径漏记流水且绕过金额校验，破坏 Wallet 的余额与流水一致性约束。",
+        "suggestion": "Payment.pay 调用 wallet.debit(amount)，由 Wallet 维护完整扣款约束。"
+      }
+    ],
+    "uncertain": [],
+    "exclusions": []
+  },
+  {
+    "case": "case-05",
+    "findings": [],
+    "uncertain": [],
+    "exclusions": [
+      {
+        "category": "S20",
+        "reason": "Payment 调用 Wallet.debit，校验、余额修改及流水追加均封装在 Wallet 内。"
+      }
+    ]
+  },
+  {
+    "case": "case-06",
+    "findings": [],
+    "uncertain": [
+      {
+        "category": "S20",
+        "missing": "缺少 wallet 定义、余额不变量和恢复/序列化访问契约；下划线写入值得核查，但可能属于受控恢复路径，不能仅凭字段名称判定越界。"
+      }
+    ],
+    "exclusions": []
+  },
+  {
+    "case": "case-07",
+    "findings": [
+      {
+        "category": "S21",
+        "location": "cases/case-07/sample.py:21-22",
+        "evidence": "已定义 Employee→Department→Manager→Contact 四个业务对象；仅负责发送提醒的 ApprovalReminder 沿 department.manager.contact.email 导航获得邮箱。",
+        "impact": "提醒客户端依赖部门、经理和联系方式的完整中间拓扑；若路径调整，发送提醒代码也要修改（潜在维护风险）。",
+        "suggestion": "提供员工审批联系人查询或独立的审批收件人解析入口，使提醒器只依赖收件能力；避免为每个字段机械添加转发。"
+      }
+    ],
+    "uncertain": [],
+    "exclusions": []
+  },
+  {
+    "case": "case-08",
+    "findings": [],
+    "uncertain": [],
+    "exclusions": [
+      {
+        "category": "S21",
+        "reason": "filter、order_by、limit 均明确返回 self；该链是同一个 Query 的流式构建步骤，不是跨业务对象导航。"
+      }
+    ]
+  },
+  {
+    "case": "case-09",
+    "findings": [],
+    "uncertain": [
+      {
+        "category": "S21",
+        "missing": "缺少 client、get_user、profile、address、city 的定义和返回类型及公开契约；无法确认各跳是否不同对象，可能为流式 API。"
+      }
+    ],
+    "exclusions": []
+  },
+  {
+    "case": "case-10",
+    "findings": [
+      {
+        "category": "S22",
+        "location": "cases/case-10/sample.py:12-22",
+        "evidence": "函数局部 Bridge 的 get/put 逐项转发 RowStore 的同名接口；lookup 已直接接受具体 RowStore，仅创建 Bridge(store) 后调用 get。",
+        "impact": "在已读函数范围内增加两套 get/put 接口与一次实例化、转发路径，未提供转换、校验或替换边界；底层接口调整可能需要同步维护转发。",
+        "suggestion": "将 lookup 的返回改为 store.get(key)，去掉局部 Bridge；此处调用者已经依赖 RowStore，不增加底层依赖扩散。"
+      }
+    ],
+    "uncertain": [],
+    "exclusions": []
+  },
+  {
+    "case": "case-11",
+    "findings": [],
+    "uncertain": [],
+    "exclusions": [
+      {
+        "category": "S22",
+        "reason": "RepositoryPort 明确提供稳定应用边界，load 依赖该端口；SqlRepository 适配 fetch_row，MemoryRepository 提供可替换实现，薄实现有实际边界价值。"
+      }
+    ]
+  },
+  {
+    "case": "case-12",
+    "findings": [],
+    "uncertain": [
+      {
+        "category": "S22",
+        "missing": "Gateway 两个方法机械转发，但缺少调用者、backend 定义、接口契约及适配目的，不能确认该层是否提供稳定端口、隔离或替换价值。"
+      }
+    ],
+    "exclusions": []
+  }
+]

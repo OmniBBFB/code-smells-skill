@@ -1,0 +1,14 @@
+[
+  {
+    "case": "case-01",
+    "id": "s10-exclude"
+  },
+  {
+    "case": "case-02",
+    "id": "s02-finding"
+  },
+  {
+    "case": "case-03",
+    "id": "s02-uncertain"
+  }
+]

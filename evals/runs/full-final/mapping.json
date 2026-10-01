@@ -1,0 +1,347 @@
+[
+  {
+    "case": "full-case-001",
+    "id": "envy-positive",
+    "file": "cases/envy-positive/sample.py"
+  },
+  {
+    "case": "full-case-002",
+    "id": "envy-negative",
+    "file": "cases/envy-negative/sample.py"
+  },
+  {
+    "case": "full-case-003",
+    "id": "envy-uncertain",
+    "file": "cases/envy-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-004",
+    "id": "intimacy-positive",
+    "file": "cases/intimacy-positive/sample.py"
+  },
+  {
+    "case": "full-case-005",
+    "id": "intimacy-negative",
+    "file": "cases/intimacy-negative/sample.py"
+  },
+  {
+    "case": "full-case-006",
+    "id": "intimacy-uncertain",
+    "file": "cases/intimacy-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-007",
+    "id": "chain-positive",
+    "file": "cases/chain-positive/sample.py"
+  },
+  {
+    "case": "full-case-008",
+    "id": "chain-negative",
+    "file": "cases/chain-negative/sample.py"
+  },
+  {
+    "case": "full-case-009",
+    "id": "chain-uncertain",
+    "file": "cases/chain-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-010",
+    "id": "middle-positive",
+    "file": "cases/middle-positive/sample.py"
+  },
+  {
+    "case": "full-case-011",
+    "id": "middle-negative",
+    "file": "cases/middle-negative/sample.py"
+  },
+  {
+    "case": "full-case-012",
+    "id": "middle-uncertain",
+    "file": "cases/middle-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-013",
+    "id": "s01-finding",
+    "file": "cases/s01-finding/sample.py"
+  },
+  {
+    "case": "full-case-014",
+    "id": "s01-exclude",
+    "file": "cases/s01-exclude/sample.py"
+  },
+  {
+    "case": "full-case-015",
+    "id": "s01-uncertain",
+    "file": "cases/s01-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-016",
+    "id": "s02-finding",
+    "file": "cases/s02-finding/sample.py"
+  },
+  {
+    "case": "full-case-017",
+    "id": "s02-exclude",
+    "file": "cases/s02-exclude/sample.py"
+  },
+  {
+    "case": "full-case-018",
+    "id": "s02-uncertain",
+    "file": "cases/s02-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-019",
+    "id": "s03-finding",
+    "file": "cases/s03-finding/sample.py"
+  },
+  {
+    "case": "full-case-020",
+    "id": "s03-exclude",
+    "file": "cases/s03-exclude/sample.py"
+  },
+  {
+    "case": "full-case-021",
+    "id": "s03-uncertain",
+    "file": "cases/s03-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-022",
+    "id": "s04-finding",
+    "file": "cases/s04-finding/sample.py"
+  },
+  {
+    "case": "full-case-023",
+    "id": "s04-exclude",
+    "file": "cases/s04-exclude/sample.py"
+  },
+  {
+    "case": "full-case-024",
+    "id": "s04-uncertain",
+    "file": "cases/s04-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-025",
+    "id": "s05-finding",
+    "file": "cases/s05-finding/sample.py"
+  },
+  {
+    "case": "full-case-026",
+    "id": "s05-exclude",
+    "file": "cases/s05-exclude/sample.py"
+  },
+  {
+    "case": "full-case-027",
+    "id": "s05-uncertain",
+    "file": "cases/s05-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-028",
+    "id": "s06-finding",
+    "file": "cases/s06-finding/sample.py"
+  },
+  {
+    "case": "full-case-029",
+    "id": "s06-exclude",
+    "file": "cases/s06-exclude/sample.py"
+  },
+  {
+    "case": "full-case-030",
+    "id": "s06-uncertain",
+    "file": "cases/s06-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-031",
+    "id": "s07-finding",
+    "file": "cases/s07-finding/sample.py"
+  },
+  {
+    "case": "full-case-032",
+    "id": "s07-exclude",
+    "file": "cases/s07-exclude/sample.py"
+  },
+  {
+    "case": "full-case-033",
+    "id": "s07-uncertain",
+    "file": "cases/s07-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-034",
+    "id": "s08-finding",
+    "file": "cases/s08-finding/sample.py"
+  },
+  {
+    "case": "full-case-035",
+    "id": "s08-exclude",
+    "file": "cases/s08-exclude/sample.py"
+  },
+  {
+    "case": "full-case-036",
+    "id": "s08-uncertain",
+    "file": "cases/s08-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-037",
+    "id": "s09-finding",
+    "file": "cases/s09-finding/sample.py"
+  },
+  {
+    "case": "full-case-038",
+    "id": "s09-exclude",
+    "file": "cases/s09-exclude/sample.py"
+  },
+  {
+    "case": "full-case-039",
+    "id": "s09-uncertain",
+    "file": "cases/s09-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-040",
+    "id": "s10-finding",
+    "file": "cases/s10-finding/sample.py"
+  },
+  {
+    "case": "full-case-041",
+    "id": "s10-exclude",
+    "file": "cases/s10-exclude/sample.py"
+  },
+  {
+    "case": "full-case-042",
+    "id": "s10-uncertain",
+    "file": "cases/s10-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-043",
+    "id": "s11-finding",
+    "file": "cases/s11-finding/sample.py"
+  },
+  {
+    "case": "full-case-044",
+    "id": "s11-exclude",
+    "file": "cases/s11-exclude/sample.py"
+  },
+  {
+    "case": "full-case-045",
+    "id": "s11-uncertain",
+    "file": "cases/s11-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-046",
+    "id": "s12-finding",
+    "file": "cases/s12-finding/sample.py"
+  },
+  {
+    "case": "full-case-047",
+    "id": "s12-exclude",
+    "file": "cases/s12-exclude/sample.py"
+  },
+  {
+    "case": "full-case-048",
+    "id": "s12-uncertain",
+    "file": "cases/s12-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-049",
+    "id": "s13-finding",
+    "file": "cases/s13-finding/sample.py"
+  },
+  {
+    "case": "full-case-050",
+    "id": "s13-exclude",
+    "file": "cases/s13-exclude/sample.py"
+  },
+  {
+    "case": "full-case-051",
+    "id": "s13-uncertain",
+    "file": "cases/s13-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-052",
+    "id": "s14-finding",
+    "file": "cases/s14-finding/sample.py"
+  },
+  {
+    "case": "full-case-053",
+    "id": "s14-exclude",
+    "file": "cases/s14-exclude/sample.py"
+  },
+  {
+    "case": "full-case-054",
+    "id": "s14-uncertain",
+    "file": "cases/s14-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-055",
+    "id": "s15-finding",
+    "file": "cases/s15-finding/sample.py"
+  },
+  {
+    "case": "full-case-056",
+    "id": "s15-exclude",
+    "file": "cases/s15-exclude/sample.py"
+  },
+  {
+    "case": "full-case-057",
+    "id": "s15-uncertain",
+    "file": "cases/s15-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-058",
+    "id": "s16-finding",
+    "file": "cases/s16-finding/sample.py"
+  },
+  {
+    "case": "full-case-059",
+    "id": "s16-exclude",
+    "file": "cases/s16-exclude/sample.py"
+  },
+  {
+    "case": "full-case-060",
+    "id": "s16-uncertain",
+    "file": "cases/s16-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-061",
+    "id": "s17-finding",
+    "file": "cases/s17-finding/sample.py"
+  },
+  {
+    "case": "full-case-062",
+    "id": "s17-exclude",
+    "file": "cases/s17-exclude/sample.py"
+  },
+  {
+    "case": "full-case-063",
+    "id": "s17-uncertain",
+    "file": "cases/s17-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-064",
+    "id": "s18-finding",
+    "file": "cases/s18-finding/sample.py"
+  },
+  {
+    "case": "full-case-065",
+    "id": "s18-exclude",
+    "file": "cases/s18-exclude/sample.py"
+  },
+  {
+    "case": "full-case-066",
+    "id": "s18-uncertain",
+    "file": "cases/s18-uncertain/sample.py"
+  },
+  {
+    "case": "full-case-067",
+    "id": "s23-finding",
+    "file": "cases/s23-finding/sample.py"
+  },
+  {
+    "case": "full-case-068",
+    "id": "s23-exclude",
+    "file": "cases/s23-exclude/sample.py"
+  },
+  {
+    "case": "full-case-069",
+    "id": "s23-uncertain",
+    "file": "cases/s23-uncertain/sample.py"
+  }
+]

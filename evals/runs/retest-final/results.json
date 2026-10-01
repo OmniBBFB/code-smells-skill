@@ -1,0 +1,63 @@
+[
+  {
+    "case": "case-01",
+    "findings": [],
+    "uncertain": [
+      {
+        "category": "S14",
+        "related_categories": [
+          "S11"
+        ],
+        "missing": "sample.py:1–5 的完整计算文本相同，但第6行明确没有领域含义及共同演进约定。需要 first/second 的调用契约，确认门槛100与返回值0/10是否表达同一知识、是否必须同步修改；现有文本不能证明重复规则或霰弹式修改。"
+      }
+    ],
+    "exclusions": []
+  },
+  {
+    "case": "case-02",
+    "findings": [],
+    "uncertain": [
+      {
+        "category": "S03",
+        "related_categories": [
+          "S05"
+        ],
+        "missing": "sample.py:1–9 两个入口整体接收并传递 amount/unit，且分别验证非负值与允许编码集合；已有成组和约束信号。缺少 amount/unit 的领域含义、共同概念及公开传输契约，无法区分领域值对象缺失与固定原始协议边界。需要调用方和 client 契约核实。"
+      },
+      {
+        "category": "S14",
+        "related_categories": [
+          "S11"
+        ],
+        "missing": "sample.py:2–3 与7–8 的校验完全相同，但约束归属、两个操作是否共享同一规则及是否有独立边界要求未知。需要 reserve/transfer 的输入契约及约束所有者，确认规则改变是否应同步；不能仅凭同名参数和相同文本定性。"
+      }
+    ],
+    "exclusions": [
+      {
+        "category": "S22",
+        "reason": "两个入口在委托前执行输入校验，并非纯机械转发；没有依据否定该边界的校验收益。"
+      }
+    ]
+  },
+  {
+    "case": "case-03",
+    "findings": [
+      {
+        "category": "S10",
+        "related_categories": [],
+        "location": "cases/case-03/sample.py:8–19",
+        "evidence": "calculate_tax 内实现 amount * 0.17；persist_invoice 内实现 INSERT INTO invoices VALUES (?, ?) 及字段映射；print_badge 内拼接 Badge: 文本；add_night_shift 委托 cron。税率计算、存储格式和展示文本由同一类直接实现，分别使用不同输入和依赖。",
+        "impact": "根据当前实现推断，税率规则、数据库模式/参数映射和徽章文本的独立变化均须修改 BusinessDesk，审查与合并范围集中在一个模块。未读取历史，不声称曾发生冲突或回归。",
+        "suggestion": "先把税费计算、发票存储与徽章格式实现按各自变化原因提炼为策略或协作者；BusinessDesk 如需统一入口可保留协调职责，避免只按方法数量拆分。"
+      }
+    ],
+    "uncertain": [
+      {
+        "category": "S02",
+        "related_categories": [],
+        "missing": "完整类显示税费、发票存储、员工状态/徽章与调度等不同成员簇，但没有相关调用者及统一入口契约。S02规则要求核查调用者，并排除有价值门面；需调用路径和类的边界职责确认后再将其定为大类。S10的直接实现变化轴已可独立判断。"
+      }
+    ],
+    "exclusions": []
+  }
+]

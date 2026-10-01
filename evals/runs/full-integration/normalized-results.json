@@ -1,0 +1,82 @@
+{
+  "findings": [
+    {
+      "category": "S20",
+      "related_categories": [],
+      "location": "checkout-app/src/checkout.py:10",
+      "evidence": "pay 直接执行 wallet._balance -= due。checkout-app/AGENTS.md:4 要求余额变更遵循 Wallet.debit；domain.py:11、16–20 规定 debit 同步维护余额和流水，并校验金额。此路径未调用 debit，也未新增流水。",
+      "impact": "已观察到余额变化与流水脱节；绕过金额/余额校验，余额不足时仍扣款。Wallet 内部表示或扣款规则变化还会传播至支付客户端。",
+      "suggestion": "通过 wallet.debit(due) 完成扣款，保留其失败契约和余额/流水一致性；无需公开余额 setter。"
+    },
+    {
+      "category": "S14",
+      "related_categories": [
+        "S11"
+      ],
+      "location": "checkout-app/src/cart.py:4–5; checkout-app/src/checkout.py:4–5",
+      "evidence": "两处 shipping_cost 完整实现相同的 total >= 10000 则免运费、否则 1000 分规则；AGENTS.md:3 明确它们属于同一国内配送政策。preview 与 pay 分别使用本地副本。",
+      "impact": "推断：修改免邮门槛或运费时必须同步调整两个独立实现，遗漏会令预览与实际支付金额不一致。未读取历史，未声称已发生遗漏。",
+      "suggestion": "提炼共享配送计价函数，由预览和支付共同调用；保持现有非负整数分金额契约，不为简单规则新增策略继承体系。"
+    }
+  ],
+  "uncertain": [],
+  "exclusions": [
+    {
+      "category": "S16",
+      "reason": "扩展上下文 domain.py:4–7 明确 OrderPayload 是冻结的传输 DTO，业务校验归领域服务；不因其只有 total 字段判为领域数据类。"
+    },
+    {
+      "category": "S17",
+      "reason": "lifecycle.after_checkout 虽没有直接函数调用，registry.py:1、3、6–7 将其注册为 checkout-completed 事件回调并通过 dispatch 动态调用；不可据直接调用搜索建议删除。"
+    },
+    {
+      "category": "S19",
+      "reason": "preview/pay 读取订单 total 属计价与支付协调；DTO 没有金额行为归属契约。余额越界写入由 S20 已覆盖，没有独立重建钱包规则的证据。"
+    },
+    {
+      "category": "S03",
+      "reason": "金额单位与非负整数约定已明确；本范围没有反复解释单位、混合币种或多处领域验证的证据。配送规则重复归 S14/S11，不凭整数或常量独立定罪。"
+    }
+  ],
+  "read_files": [
+    "checkout-app/AGENTS.md",
+    "checkout-app/src/cart.py",
+    "checkout-app/src/checkout.py",
+    "checkout-app/src/lifecycle.py",
+    "checkout-app/src/domain.py",
+    "checkout-app/src/registry.py",
+    "code-smells/SKILL.md",
+    "code-smells/references/smell-index.md",
+    "code-smells/references/bloaters.md",
+    "code-smells/references/object-orientation.md",
+    "code-smells/references/change-preventers.md",
+    "code-smells/references/dispensables.md",
+    "code-smells/references/coupling.md",
+    "code-smells/references/library-boundaries.md"
+  ],
+  "coverage": {
+    "S01": "筛选未见候选",
+    "S02": "筛选未见候选",
+    "S03": "已核查候选：排除",
+    "S04": "筛选未见候选",
+    "S05": "筛选未见候选",
+    "S06": "筛选未见候选",
+    "S07": "筛选未见候选",
+    "S08": "筛选未见候选",
+    "S09": "筛选未见候选",
+    "S10": "筛选未见候选",
+    "S11": "已核查候选：确定发现（同根因合并）",
+    "S12": "筛选未见候选",
+    "S13": "筛选未见候选",
+    "S14": "已核查候选：确定发现（同根因合并）",
+    "S15": "筛选未见候选",
+    "S16": "已核查候选：排除",
+    "S17": "已核查候选：排除",
+    "S18": "筛选未见候选",
+    "S19": "已核查候选：排除",
+    "S20": "已核查候选：确定发现（同根因合并）",
+    "S21": "筛选未见候选",
+    "S22": "筛选未见候选",
+    "S23": "筛选未见候选"
+  }
+}

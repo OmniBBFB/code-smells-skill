@@ -1,0 +1,3 @@
+def invoke(a, b, c, d, e, f, g, h):
+    # Signature excerpt only; calling contract and implementation unavailable.
+    ...

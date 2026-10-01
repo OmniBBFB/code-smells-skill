@@ -1,0 +1,55 @@
+{
+  "cases": 3,
+  "classification_passes": 3,
+  "primary_label_passes": 3,
+  "by_outcome": {
+    "finding": {
+      "total": 1,
+      "passed": 1
+    },
+    "exclude": {
+      "total": 1,
+      "passed": 1
+    },
+    "uncertain": {
+      "total": 1,
+      "passed": 1
+    }
+  },
+  "complete_finding_fields": true,
+  "checks": [
+    {
+      "case": "case-01",
+      "id": "s10-exclude",
+      "expected": "exclude",
+      "target": "S10",
+      "classification_pass": true,
+      "primary_label_pass": true,
+      "finding_fields_complete": true,
+      "other_finding_labels": []
+    },
+    {
+      "case": "case-02",
+      "id": "s02-finding",
+      "expected": "finding",
+      "target": "S02",
+      "classification_pass": true,
+      "primary_label_pass": true,
+      "finding_fields_complete": true,
+      "other_finding_labels": [
+        "S10"
+      ]
+    },
+    {
+      "case": "case-03",
+      "id": "s02-uncertain",
+      "expected": "uncertain",
+      "target": "S02",
+      "classification_pass": true,
+      "primary_label_pass": true,
+      "finding_fields_complete": true,
+      "other_finding_labels": []
+    }
+  ],
+  "limitation": "Target-label and field checks require independent semantic review."
+}
