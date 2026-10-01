@@ -1,8 +1,0 @@
-{
-  "required_findings": true,
-  "callback_and_dto_excluded": true,
-  "context_traced": true,
-  "coverage_complete": true,
-  "semantic_review": "Evidence, locations and suggestions checked against source by primary agent",
-  "classification_normalization": "Derived file strips Chinese name after the Sxx identifier; raw output retained"
-}

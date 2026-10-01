@@ -1,6 +1,0 @@
-class First:
-    def send(self, target, body): ...
-
-class Second:
-    def transmit(self, body, target): ...
-# Whether these operations have interchangeable semantics is unspecified.
